@@ -1,19 +1,16 @@
 clear()
 from judgement_canharv import judgement
+from plant_carrot import plant_carrot
+import water
 while True:
-	for i in range(3):
-		for j in range (3):
+	for i in range(get_world_size()):
+		for j in range (get_world_size()):
 			is_harvest = judgement() # 判断是否能收割
 
+			water.water() # 浇水
+
 			if i == 0: # 第0行种植胡萝卜
-				
-				if get_ground_type() == Entities.Carrot: # 是否为胡萝卜地
-					if is_harvest or get_ground_type() == Grounds.Soil: # 判断是否需要重新种植
-						plant(Entities.Carrot)
-				else:
-					if is_harvest:
-						till()
-						plant(Entities.Carrot)
+				plant_carrot()
 
 			if i == 1 :
 				plant(Entities.Bush)
@@ -21,7 +18,6 @@ while True:
 			move(North)
 
 		move(East)
-	
 	
 
 
