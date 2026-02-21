@@ -1,4 +1,5 @@
 def water(target):
+	# 输入目标作物类型列表，判断当前作物类型是否在目标列表中，如果是则浇水
 	staus = get_water()
 	type = get_entity_type()
 

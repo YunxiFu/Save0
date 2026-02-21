@@ -1,38 +1,30 @@
 clear()
 
 import judgement_canharv 
-import plant_carrot 
+import plant_vegetable
 import water 
 
-target = [Entities.Carrot, Entities.Tree] # 需要浇水的作物类型列表
+target = [Entities.Carrot, Entities.Tree,Entities.Pumpkin] # 需要浇水的作物类型列表
+
+
 
 while True:
 	for x in range(get_world_size()):
 		for y in range (get_world_size()):
+
 			is_harvest = judgement_canharv.judgement() # 判断是否能收割
 
-			if x == 0 or x == 5: # 第0行或第5行种植胡萝卜和树
-				if y % 2 == 0: # 偶数行种植胡萝卜
-					plant_carrot.plant_carrot() # 种植胡萝卜
+			plant_vegetable.plant_carrot() # 种植胡萝卜用
 
-				else: # 奇数行种植树
-					plant(Entities.Tree)
+			# tag = get_pos_x() + get_pos_y() # 用于判断上次种了树还是灌木
+			# plant_vegetable.plant_tree(tag) # 种植树或灌木
+			# quick_print(tag)
 			
-			if y == 0 or y == 5: # 第0列或第5列种植胡萝卜和树
-				if x % 2 == 0: # 偶数列种植胡萝卜
-					plant_carrot.plant_carrot() # 种植胡萝卜
 
-				else: # 奇数列种植树
-					plant(Entities.Tree)
 
-			if x == 1 or x == 4: # 第1行或第4行种植灌木
-				plant(Entities.Bush)
-			
-			water.water(target) # 浇水
+			# water.water(target) # 浇水
 
 			move(North)
-
 		move(East)
-	
 
 
