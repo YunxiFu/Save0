@@ -1,3 +1,10 @@
+# 代码解释
+每个main文件有不同作用
+main.py是单独种植文件（基础材料：hay,wood,carrot）
+main_multi.py是综合种植文件（基础材料综合种植）
+main_pumpkin.py是南瓜转圈种植文件
+剩下的是函数文件，用于导入
+
 0217
 # 胡萝卜的几种可能情况
 1.从草地种植grassland
